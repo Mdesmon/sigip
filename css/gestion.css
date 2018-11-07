@@ -1,0 +1,563 @@
+body {
+    width: 100%;
+    height: 100%;
+    padding-top: 90px;
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-shadow: 0px 0px 5px black;
+    font-weight: normal;
+}
+h1 {
+    font-size: 50px;
+}
+h2 {
+    font-size: 30px;
+}
+
+/* HEADER */
+
+header {
+    width: 100%;
+    height: 90px;
+    line-height: 60px;
+    padding: 15px;
+    background: #718093;
+    background: linear-gradient(to bottom, #000000b2 0%, rgba(38, 44, 51, 0.3) 100%);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, .5);
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+header #logo_organization {
+    max-width: 250px;
+    height: 80px;
+    margin: 5px 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+header nav {
+    width: 520px;
+    font-size: 20px;
+    vertical-align: top;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    left: 280px;
+}
+header nav .item {
+    padding: 0 10px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+header nav .item .underline {
+    background: rgb(255, 208, 0);
+    animation: flipInY 1s;
+    display: none;
+}
+header nav .item.active {
+    color: rgb(255, 208, 0);
+}
+header nav .item.active .underline {
+    display: block;
+}
+header nav .icon {
+    vertical-align: top;
+}
+header nav .text {
+    display: inline-block;
+}
+header nav .underline {
+    width: 100%;
+    height: 3px;
+    background: rgba(226, 201, 201, 0.2);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* TABLEAU */
+
+table {
+	width: 92%;
+	margin: auto;
+	border-collapse: collapse;
+	box-shadow: none;
+}
+
+.btnSpringtime {
+	line-height: 10px;
+}
+
+
+/* MENUS */
+
+#btnExportCsv::before {
+    content: "\2c6";
+    vertical-align: top;
+    font-family: WebAtlas;
+    font-weight: normal;
+    margin-right: 10px;
+}
+#btnExportCsv {
+    padding: 4px 12px;
+    position:absolute;
+    right:300px;
+    bottom:40px;
+}
+
+#btnAjouterUtilisateur::before {
+    content: "\297";
+    vertical-align: top;
+    font-family: WebAtlas;
+    font-weight: normal;
+    margin-right: 7px;
+}
+#btnAjouterUtilisateur {
+    padding: 4px 12px;
+    position:absolute;
+    right:40px;
+    bottom:40px;
+}
+
+#btnInscrire::before {
+    content: "\10c";
+    vertical-align: top;
+    font-family: WebAtlas;
+    font-weight: normal;
+    margin-right: 7px;
+}
+#btnInscrire {
+    padding: 4px 12px;
+}
+
+#messageErreur::before {
+    content: "\1b5";
+    vertical-align: top;
+    font-family: WebAtlas;
+    font-weight: normal;
+    margin-right: 7px;
+}
+#messageErreur {
+    padding: 4px 12px;
+}
+
+#btnInscrire::before {
+    content: "\10c";
+    vertical-align: top;
+    font-family: WebAtlas;
+    font-weight: normal;
+    margin-right: 7px;
+}
+#btnInscrire {
+    padding: 4px 12px;
+}
+
+/* PARAMETRES GENERAUX */
+
+#btnAjouterOrganisation {
+	width: 240px;
+	padding: 4px 10px;
+	text-align: center;
+	margin: auto;
+	display: block;
+}
+#btnAjouterOrganisation .circle-plus {
+	font-size: 16px;
+	vertical-align: top;
+}
+
+#tableOrganisations {
+	width: 500px;
+	margin: auto;
+	border: 2px solid #555;
+	background-color: #1e1e1e;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, .5);
+	cursor: default;
+}
+
+#tableOrganisations .organisation {
+	height: 40px;
+	line-height: 40px;
+	padding-left: 30px;
+	font-weight: bold;
+	border: 1px solid rgba(0, 0, 0, 0.6);
+	text-shadow: 1px 1px 0px black;
+	box-shadow: inset 0px 0px 0px 1px rgba(155, 155, 155, .6);
+	background: #7a7a7a;
+	background: -moz-linear-gradient(top,  #7a7a7a 0%, #545454 100%);
+	background: -webkit-linear-gradient(top,  #7a7a7a 0%,#545454 100%);
+	background: linear-gradient(to bottom,  #7a7a7a 0%,#545454 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7a7a7a', endColorstr='#545454',GradientType=0 );
+
+	position: relative;
+}
+
+#tableOrganisations .sousOrganisation {
+	height: 40px;
+	line-height: 40px;
+	padding-left: 60px;
+	border: 1px solid rgba(0, 0, 0, 0.6);
+	box-shadow: inset 0px 0px 0px 1px rgba(155, 155, 155, .6);
+	background: #444444;
+	background: -moz-linear-gradient(top,  #444444 0%, #3a3a3a 100%);
+	background: -webkit-linear-gradient(top,  #444444 0%,#3a3a3a 100%);
+	background: linear-gradient(to bottom,  #444444 0%,#3a3a3a 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#444444', endColorstr='#3a3a3a',GradientType=0 );
+
+	position: relative;
+}
+
+#tableOrganisations .ajouterSousOrganisation {
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	margin: 5px;
+	border: 1px dashed #444;
+	border-radius: 5px;
+} #tableOrganisations .ajouterSousOrganisation:hover {
+	background-color: #1E5799;
+	cursor: pointer;
+}
+
+.btnTrash {
+	font-family: webAtlas;
+	color: #b7b7b7;
+	line-height: 41px;
+	cursor: pointer;
+	position: absolute;
+	right: 20px;
+	top: 0px;
+}
+.btnTrash::before {
+	content: "\3f6";
+}
+.btnTrash:hover {
+	color: #dadada;
+}
+.btnTrash:active {
+	top: 1px;
+}
+
+.btnPen {
+	font-family: webAtlas;
+	color: #b7b7b7;
+	line-height: 41px;
+	cursor: pointer;
+	position: absolute;
+	right: 50px;
+	top: 0px;
+}
+.btnPen::before {
+	content: "\404";
+}
+.btnPen:hover {
+	color: #dadada;
+}
+.btnPen:active {
+	top: 1px;
+}
+
+
+
+/* Login */
+
+.bulleDialogue {
+    width: 750px;
+    box-sizing: border-box;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.menuLogin, .menuMdpPerdu, .menuChangerMdp {
+    width: 320px;
+    max-width: 95%;
+    padding: 15px 25px;
+    margin: auto;
+    box-sizing: border-box;
+    position: relative;
+}
+.menuLogin input, .menuMdpPerdu input, .menuChangerMdp input {
+    width: 100%;
+    height: 28px;
+    box-sizing: border-box;
+    margin-top: 7px;
+    border: 1px solid;
+}
+.menuLogin .btnSubmit, .menuMdpPerdu .btnSubmit, .menuChangerMdp .btnSubmit {
+    width: 100%;
+    box-sizing: border-box;
+}
+.menuLogin #mdpPerdu {
+    float: right;
+    color: rgb(90, 169, 236);
+    cursor: pointer;
+}
+
+.menuMdpPerdu {
+    width: 500px;
+}
+.menuMdpPerdu .instruction {
+    text-align: center;
+    font-size: 17px;
+}
+.menuMdpPerdu label {
+    display: inline-block;
+}
+.menuMdpPerdu .btnRetour {
+    width: 30px;
+    line-height: 30px;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    bottom: -53px;
+    left: -1px;
+}
+
+#container_mdpPerdu .bulleDialogue {
+    width: 500px;
+    display: none;
+}
+
+#container_login {
+    width: 100%;
+    height: 0px;
+    margin-left : 0px;
+    transition: .7s;
+}
+#container_login.cache {
+    margin-left : -100%;
+}
+
+#container_mdpPerdu {
+    width: 100%;
+    height: 0px;
+    margin-left : 0px;
+    transition: .7s;
+}
+#container_mdpPerdu.cache {
+    margin-left: 100%;
+}
+
+.menuChangerMdp {
+    width: 440px;
+}
+
+#container_changerMdp .bulleDialogue {
+    width: 440px;
+    display: none;
+}
+
+
+
+/* GESTION UTILISATEURS */
+
+.fiche {
+    width: 750px;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 40px 50px;
+    padding-top: 10px;
+    background-color: white;
+    border: solid 1px black;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    color: #4F3A38;
+    position: relative;
+}.fiche h2 {
+    text-shadow: none;
+}
+
+#btn-export-csv {
+	display: none; /* !!! */
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+}
+
+#nombre_entree {
+	font-size: 20px;
+	text-shadow: 0px 0px 5px black;
+	position: absolute;
+	bottom: 35px;
+	left: 230px;
+}
+
+#btn-ajouter {
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+}
+#btn-ajouter .circle-plus {
+    width: 1.6em;
+	font-size: 19px;
+	vertical-align: top;
+}
+
+#btn-acceuil_sessions {
+    position: absolute;
+	bottom: 30px;
+	right: 280px;
+}
+
+#menu-haut {
+	width: 92%;
+	line-height: 30px;
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom: 15px;
+	padding: 5px 20px;
+	background-color: rgba(30, 30, 30, 0.7);
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+#menu-haut li {
+	line-height: 30px;
+	margin: 0 10px;
+	display: inline-block;
+}
+
+
+
+/* GESTION SESSIONS DEBUT */
+
+.circle-info {
+	color: rgb(88, 166, 255);
+	cursor: pointer;
+}
+
+#info_etats {
+	width: 800px;
+	padding: 30px;
+	text-align: left;
+	cursor: pointer;
+	animation: zoom .5s;
+	display: none;
+	position: absolute;
+}
+#info_etats .title {
+	font-size: 30px;
+	text-align: center;
+}
+
+#fenetreModifier, #fenetreVoir, #fenetreMdp {
+	width: 500px;
+	padding: 17px;
+	background-color: #676d7a;
+	background-image: linear-gradient(to bottom, rgba(255,255,255,.3) 0%,rgba(255,255,255,.0) 30%,rgba(0,0,0,.2) 60%,rgba(0,0,0,.2) 100%);
+	animation: zoom .3s;
+	position: absolute;
+}
+#fenetreModifier .title, #fenetreVoir .title, #fenetreMdp .title {
+	font-size: 22px;
+	top: 10px;
+	left: 25px;
+	position: absolute;
+}
+#fenetreModifier input {
+	vertical-align: unset;
+}
+
+#fenetreModifier_btnValider {
+	width: 50%;
+	box-sizing: border-box;
+	line-height: 25px;
+	text-align: center;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+#fenetreModifier_btnAnnuler {
+	width: 50%;
+	box-sizing: border-box;
+	line-height: 25px;
+	text-align: center;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+#fenetreModifier_btnModifier {
+	width: 150px;
+	margin: auto;
+	display: block;
+}
+#fenetreModifier_btnChangerMdp {
+	width: 205px;
+	margin: auto;
+	display: block;
+}
+
+#fenetreVoir_btnFermer {
+	width: 250px;
+	margin: auto;
+	display: block;
+}
+
+#popupLien .text, #popupCode .text {
+	color: #FF9000;
+	text-align: center;
+}
+
+#popupLien #inputLien {
+	width: 250px;
+	margin: auto;
+	display: block;
+}
+
+#popupCode #inputCode {
+	width: 50px;
+	margin: auto;
+	display: block;
+}
+
+#btnFermerPopupLien, #btnFermerPopupCode {
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+}
+
+
+
+
+@media (max-width: 900px) {
+    header nav {
+        width: auto;
+        font-size: 30px;
+    }
+    header nav .text {
+        display: none;
+    }
+}
+@media (max-width: 570px) {
+    body {
+        padding: 0;
+    }
+    header {
+        height: auto;
+        position: initial;
+    }
+    header nav {
+        width: 200px;
+        margin: auto;
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    header #logo_organization {
+        width: auto;
+        background-position: center;
+        position: relative;
+        display: block;
+    }
+}

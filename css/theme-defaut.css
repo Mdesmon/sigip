@@ -1,0 +1,496 @@
+.feuille1-1 {
+	width: 200px;
+	height: 200px;
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-image: url(../img/defaut/feuille1-1.png);
+	display: inline-block;
+	position: absolute;
+}
+
+.feuille1-2 {
+	width: 200px;
+	height: 200px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url(../img/defaut/feuille1-2.png);
+	display: inline-block;
+	position: absolute;
+}
+
+.feuille2-1 {
+	width: 364px;
+	height: 85px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url(../img/defaut/feuille2-1.png);
+	display: inline-block;
+	position: absolute;
+}
+
+.feuille2-2 {
+	width: 364px;
+	height: 86px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url(../img/defaut/feuille2-2.png);
+	display: inline-block;
+	position: absolute;
+}
+
+.feuille3 {
+	width: 458px;
+	height: 297px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url(../img/defaut/feuille3.png);
+	display: inline-block;
+	position: absolute;
+}
+
+.feuille4-1 {
+	width: 420px;
+	height: 138px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url(../img/defaut/feuille4-1.png);
+	display: inline-block;
+	position: absolute;
+}
+
+.feuille4-2 {
+	width: 420px;
+	height: 137px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url(../img/defaut/feuille4-2.png);
+	display: inline-block;
+	position: absolute;
+}
+
+.feuille5 {
+	width: 500px;
+	height: 279px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url(../img/defaut/feuille5.png);
+	display: inline-block;
+	position: absolute;
+}
+
+.feuille6 {
+	width: 220px;
+	height: 220px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url(../img/defaut/feuille6.png);
+	display: inline-block;
+	position: absolute;
+}
+
+.punaise1-rouge {
+	width: 29px;
+	height: 35px;
+	margin-top: -1px;
+	margin-left: -28px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: 0px 0px;
+	position: absolute;
+}
+.punaise2-rouge {
+	width: 21px;
+	height: 39px;
+	margin-top: -39px;
+	margin-left: -18px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -29px 0px;
+	position: absolute;
+}
+.punaise3-rouge {
+	width: 40px;
+	height: 37px;
+	margin-top: -36px;
+	margin-left: -1px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -50px 0px;
+	position: absolute;
+}
+.punaise4-rouge {
+	width: 46px;
+	height: 29px;
+	margin-top: -28px;
+	margin-left: -45px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -90px 0px;
+	position: absolute;
+}
+.punaise5-rouge {
+	width: 37px;
+	height: 34px;
+	margin-top: -1px;
+	margin-left: -1px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -136px 0px;
+	position: absolute;
+}
+
+.punaise1-orange {
+	width: 29px;
+	height: 35px;
+	margin-top: -1px;
+	margin-left: -28px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: 0px -39px;
+	position: absolute;
+}
+.punaise2-orange {
+	width: 21px;
+	height: 39px;
+	margin-top: -39px;
+	margin-left: -18px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -29px -39px;
+	position: absolute;
+}
+.punaise3-orange {
+	width: 40px;
+	height: 37px;
+	margin-top: -36px;
+	margin-left: -1px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -50px -39px;
+	position: absolute;
+}
+.punaise4-orange {
+	width: 46px;
+	height: 29px;
+	margin-top: -28px;
+	margin-left: -45px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -90px -39px;
+	position: absolute;
+}
+.punaise5-orange {
+	width: 37px;
+	height: 34px;
+	margin-top: -1px;
+	margin-left: -1px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -136px -39px;
+	position: absolute;
+}
+
+.punaise1-jaune {
+	width: 29px;
+	height: 35px;
+	margin-top: -1px;
+	margin-left: -28px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: 0px -78px;
+	position: absolute;
+}
+.punaise2-jaune {
+	width: 21px;
+	height: 39px;
+	margin-top: -39px;
+	margin-left: -18px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -29px -78px;
+	position: absolute;
+}
+.punaise3-jaune {
+	width: 40px;
+	height: 37px;
+	margin-top: -36px;
+	margin-left: -1px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -50px -78px;
+	position: absolute;
+}
+.punaise4-jaune {
+	width: 46px;
+	height: 29px;
+	margin-top: -28px;
+	margin-left: -45px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -90px -78px;
+	position: absolute;
+}
+.punaise5-jaune {
+	width: 37px;
+	height: 34px;
+	margin-top: -1px;
+	margin-left: -1px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -136px -78px;
+	position: absolute;
+}
+
+.punaise1-vert {
+	width: 29px;
+	height: 35px;
+	margin-top: -1px;
+	margin-left: -28px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: 0px -117px;
+	position: absolute;
+}
+.punaise2-vert {
+	width: 21px;
+	height: 39px;
+	margin-top: -39px;
+	margin-left: -18px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -29px -117px;
+	position: absolute;
+}
+.punaise3-vert {
+	width: 40px;
+	height: 37px;
+	margin-top: -36px;
+	margin-left: -1px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -50px -117px;
+	position: absolute;
+}
+.punaise4-vert {
+	width: 46px;
+	height: 29px;
+	margin-top: -28px;
+	margin-left: -45px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -90px -117px;
+	position: absolute;
+}
+.punaise5-vert {
+	width: 37px;
+	height: 34px;
+	margin-top: -1px;
+	margin-left: -1px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -136px -117px;
+	position: absolute;
+}
+
+.punaise1-bleu {
+	width: 29px;
+	height: 35px;
+	margin-top: -1px;
+	margin-left: -28px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: 0px -156px;
+	position: absolute;
+}
+.punaise2-bleu {
+	width: 21px;
+	height: 39px;
+	margin-top: -39px;
+	margin-left: -18px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -29px -156px;
+	position: absolute;
+}
+.punaise3-bleu {
+	width: 40px;
+	height: 37px;
+	margin-top: -36px;
+	margin-left: -1px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -50px -156px;
+	position: absolute;
+}
+.punaise4-bleu {
+	width: 46px;
+	height: 29px;
+	margin-top: -28px;
+	margin-left: -45px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -90px -156px;
+	position: absolute;
+}
+.punaise5-bleu {
+	width: 37px;
+	height: 34px;
+	margin-top: -1px;
+	margin-left: -1px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -136px -156px;
+	position: absolute;
+}
+
+.punaise1-violet {
+	width: 29px;
+	height: 35px;
+	margin-top: -1px;
+	margin-left: -28px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: 0px -195px;
+	position: absolute;
+}
+.punaise2-violet {
+	width: 21px;
+	height: 39px;
+	margin-top: -39px;
+	margin-left: -18px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -29px -195px;
+	position: absolute;
+}
+.punaise3-violet {
+	width: 40px;
+	height: 37px;
+	margin-top: -36px;
+	margin-left: -1px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -50px -195px;
+	position: absolute;
+}
+.punaise4-violet {
+	width: 46px;
+	height: 29px;
+	margin-top: -28px;
+	margin-left: -45px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -90px -195px;
+	position: absolute;
+}
+.punaise5-violet {
+	width: 37px;
+	height: 34px;
+	margin-top: -1px;
+	margin-left: -1px;
+	background-image: url(../img/defaut/punaises.png);
+	background-position: -136px -195px;
+	position: absolute;
+}
+
+textarea {
+	margin: auto;
+	border: none;
+	font-family: "Indie Flower";
+	font-size: 17px;
+	background: none;
+}
+
+.feuille1-1 textarea, .feuille1-2 textarea {
+	width: 170px;
+	height: 170px;
+	padding: 0px;
+	position: relative;
+	top: 15px;
+	left: 15px;
+}
+
+.feuille2-1 textarea, .feuille2-2 textarea {
+	width: 330px;
+	height: 60px;
+	line-height: 60px;
+	padding: 0px;
+	font-size: 25px;
+	position: relative;
+	top: 10px;
+	left: 15px;
+}
+
+.feuille3 textarea {
+	width: 410px;
+	height: 260px;
+	padding: 0px;
+	position: relative;
+	top: 15px;
+	left: 20px;
+}
+
+.feuille4-1 textarea, .feuille4-2 textarea {
+	width: 380px;
+	height: 70px;
+	line-height: 30px;
+	padding: 0px;
+	position: relative;
+	top: 40px;
+	left: 18px;
+}
+
+.feuille5 textarea {
+	width: 460px;
+	height: 190px;
+	line-height: 30px;
+	padding: 0px;
+	position: relative;
+	top: 50px;
+	left: 20px;
+}
+
+.feuille6 textarea {
+	width: 150px;
+	height: 170px;
+	padding: 0px;
+	position: relative;
+	top: 15px;
+	left: 35px;
+}
+
+.auteur {
+	width: 170px;
+	height: 20px; /* Empêche les nom trop grand de se superposer aux textes */
+	overflow: hidden;
+	color: black;
+	font-family: "Indie Flower";
+	font-size: 17px;
+	padding: 5px;
+	position: absolute;
+	top: 5px;
+	left: 15px;
+}
+
+.vignette-feuille1 {
+	background-position: 0px 0px;
+}
+
+.vignette-feuille2 {
+	background-position: -80px 0px;
+}
+
+.vignette-feuille3 {
+	background-position: -160px 0px;
+}
+
+.vignette-feuille4 {
+	background-position: -240px 0px;
+}
+
+.vignette-feuille5 {
+	background-position: -320px 0px;
+}
+
+.vignette-feuille6 {
+	background-position: -400px 0px;
+}
+
+.vignette-punaise-rouge {
+	background-position: -480px 0px;
+}
+
+.vignette-punaise-orange {
+	background-position: -560px 0px;
+}
+
+.vignette-punaise-jaune {
+	background-position: -640px 0px;
+}
+
+.vignette-punaise-vert {
+	background-position: -720px 0px;
+}
+
+.vignette-punaise-bleu {
+	background-position: -800px 0px;
+}
+
+.vignette-punaise-violet {
+	background-position: -880px 0px;
+}
+.btn-feuilles .vignette {
+	background-image: url(../img/defaut/elements.png);
+}

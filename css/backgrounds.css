@@ -1,0 +1,75 @@
+.bois1 {
+	background-image: url(../img/backgrounds/bois1.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.carton {
+	background-image: url(../img/backgrounds/carton.png);
+}
+
+
+.fractal1 {
+	background: center fixed url(../img/backgrounds/fractal1.png);
+	background-size: cover;
+}
+
+.fractal2 {
+	background: center fixed url(../img/backgrounds/fractal2.png);
+	background-size: cover;
+}
+
+.fractal3 {
+	background: center fixed url(../img/backgrounds/fractal3.jpg);
+	background-size: cover;
+}
+
+.liege1 {
+	background-image: url(../img/backgrounds/liege1.png);
+}
+
+.liege2 {
+	background-image: url(../img/backgrounds/liege2.png);
+}
+
+.lumiere1 {
+	background-image: url(../img/backgrounds/lumiere1.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.lumiere2 {
+	background-image: url(../img/backgrounds/lumiere2.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.mur1 {
+	background-image: url(../img/backgrounds/mur1.png);
+}
+
+.mur2 {
+	background-image: url(../img/backgrounds/mur2.png);
+}
+
+.mur3 {
+	background-image: url(../img/backgrounds/mur3.png);
+}
+
+.papier1 {
+	background-image: url(../img/backgrounds/papier1.jpg);
+}
+
+.papier2 {
+	background-image: url(../img/backgrounds/papier2.jpg);
+}
+
+.tableau1 {
+	background: center fixed url(../img/backgrounds/tableau1.jpg);
+	background-size: cover;
+}
+
+.tableau2 {
+	background: center fixed url(../img/backgrounds/tableau2.png);
+	background-size: cover;
+}
