@@ -1,0 +1,11 @@
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="94.349mm" width="188.7mm" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 668.61355 334.30677" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<defs>
+		<linearGradient id="a" y2="57.929" gradientUnits="userSpaceOnUse" x2="31.156" y1="392.6" x1="31.156">
+			<stop stop-opacity=".78431" offset="0"/>
+			<stop stop-opacity="0" offset="1"/>
+		</linearGradient>
+	</defs>
+	<g fill="url(#a)" transform="translate(-30.492 -58.108)">
+		<rect style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" height="334.31" width="668.61" y="58.108" x="30.492" fill="url(#a)"/>
+	</g>
+</svg>

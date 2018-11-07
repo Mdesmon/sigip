@@ -1,0 +1,21 @@
+body {
+    background-image: url(../img/backgrounds/fractal3.jpg);
+
+}
+
+h1 {
+    font-weight: normal;
+    text-align: center;
+    margin: 50px auto;
+}
+
+#fiche {
+    width: 900px;
+    max-width: 95%;
+    padding: 1em;
+    margin: auto;
+    background: white;
+    border: 1px solid black;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .5);
+    box-sizing: border-box;
+}

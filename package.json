@@ -1,0 +1,19 @@
+{
+  "name": "si-gip",
+  "version": "0.0.0",
+  "main": "Index.php",
+  "repository": "https://github.com/Mdesmon/sigip.git",
+  "author": "Marc Desmon",
+  "contributors": [
+    "Louis Moraes <lmoraes@hotmail.fr>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "atomjs": "https://github.com/lgmoraes/AtomJS.git",
+    "bootstrap": "^3.3.7",
+    "font_webatlas": "^0.6.0",
+    "jquery": "^3.3.1",
+    "pickadate": "^3.5.6"
+  }
+}

@@ -1,0 +1,41 @@
+#overlay_bandeau {
+    min-height: 45px;
+    padding: 10px;
+    color: white;
+    background: rgba(0, 0, 0, .5);
+    animation: fondu 0.2s;
+    display: none;
+    position: fixed;
+    top: 30px;
+    left: 0;
+}
+#overlay_bandeau_icon {
+    line-height: 45px;
+    vertical-align: top;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: "webAtlas";
+    font-size: 35px;
+    color: white;
+    display: inline-block;
+}
+#overlay_bandeau_message {
+    line-height: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    vertical-align: top;
+    font-size: 20px;
+    color: white;
+    display: inline-block;
+}
+
+#overlay_voile {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    animation: fondu .3s;
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+}

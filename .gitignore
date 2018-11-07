@@ -1,0 +1,8 @@
+node_modules/
+vendor/
+content/users/*
+!content/users/dummy
+content/sessions/*
+!content/sessions/dummy
+content/organizations/*
+!content/organizations/dummy

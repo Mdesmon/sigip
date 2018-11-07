@@ -1,0 +1,289 @@
+/* RESET CSS */
+a {
+	text-decoration: none;
+	color: inherit;
+}
+input:focus, textarea:focus {
+	outline: none;
+}
+/* FIN RESET CSS */
+
+html {
+	height: 100%;
+}
+body {
+	min-height: 100%;
+	color: white;
+	margin: 0px;
+	padding: 8px;
+	box-sizing: border-box;
+	font-family: cuprum;
+	background-image: url(../img/backgrounds/fractal1.png);
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+hr.center {
+	width: 300px;
+	margin: auto;
+}hr.left {
+	width: 300px;
+}
+
+.app-logo {
+	width: 150px;
+	height: 100px;
+	background: center no-repeat url('../img/logo.png');
+	background-size: contain;
+}
+
+#avatar {
+    width: 50px;
+	height:50px;
+	font-size: 16px;
+	font-family: Cuprum;
+    border: 2px solid grey;
+    border-radius: 100%;
+    background: center url('../api/user_avatar.php');
+	background-size: cover;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+	cursor: pointer;
+	z-index: 1;
+    position: absolute;
+    right: 30px;
+    top: 18px;
+}
+#avatar .arrow_box {
+	width: 180px;
+	line-height: 30px;
+	padding: 5px 0;
+	color: rgb(60, 60, 60);
+	text-shadow: 1px 1px 0 rgba(100, 100, 130, 0.2);
+	border-radius: 5px;
+	background: #ebebeb;
+	border: 1px solid #a6a6a6;
+	animation: fadeIn .15s;
+	display: none;
+	position: absolute;
+	right: -10px;
+    top: 68px;
+}
+#avatar .arrow_box.active {
+	display: block;
+}
+#avatar .arrow_box:after, .arrow_box:before {
+	bottom: 100%;
+	right: 23px;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+#avatar .arrow_box:after {
+	border-color: rgba(194, 194, 194, 0);
+	border-bottom-color: #ebebeb;
+	border-width: 10px;
+	margin-left: -10px;
+}
+#avatar .arrow_box:before {
+	border-color: rgba(166, 166, 166, 0);
+	border-bottom-color: #a6a6a6;
+	border-width: 11px;
+	margin-left: -11px;
+}
+ul.arrow_box {
+	margin: 0;
+	cursor: default;
+}
+ul.arrow_box a {
+	color: inherit;
+	text-decoration: none;
+}
+.arrow_box li {
+	padding: 0 12px;
+	list-style-type: none;
+}
+.arrow_box li.item:hover {
+	background: #c8c8c8;
+}
+.arrow_box li.logout {
+	color: white;
+	border-radius: 5px;
+	background: red;
+	padding: 0 8px;
+	margin: 5px 5px 0 5px;
+	list-style-type: none;
+}
+.arrow_box li.logout:active {
+	background: rgb(160, 0, 0);
+}
+.arrow_box hr {
+	margin: 2px 0;
+	border: 0;
+	border-top: 1px solid #c8c8c8;
+	border-bottom: 1px solid white;
+}
+
+#btnLogin {
+	z-index: 1;
+    position: absolute;
+    right: 30px;
+    top: 18px;
+}
+
+
+#main-col {
+	background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.85);
+	border-radius: 12px 0px;
+	box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.6);
+	padding: 30px 40px;
+	color: #4F3A38;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+#dots {
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/dots.png);
+	opacity: 0.6;
+	z-index: -1;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+}
+
+#voile {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(100, 100, 130, 0.4);
+	box-shadow: inset 0px 0px 150px 100px rgb(34, 34, 34, .6);
+	display: none;
+	animation: fondu .3s;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+}
+
+.sup {
+	vertical-align: super;
+}
+
+.sub {
+	vertical-align: sub;
+}
+
+/* --- Classes modulaires --- */
+
+
+.floatLeft {
+	float: left;
+	margin-right: 20px;
+}
+
+.floatRight {
+	float: right;
+	margin-left: 20px;
+}
+
+.alignLeft {
+	text-align: left;
+}
+
+.alignRight {
+	text-align: right;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.col-half { width: 50%;	display: inline-block; vertical-align: top;}
+.col-thirds { width: 33.3%;	display: inline-block; vertical-align: top;}
+.col-two-thirds { width: 66.7%;	display: inline-block; vertical-align: top;}
+.col-quarts { width: 25%; display: inline-block; vertical-align: top;}
+.col-three-quarts {	width: 75%;	display: inline-block; vertical-align: top;}
+.col-fifth { width: 20%; display: inline-block; vertical-align: top;}
+.col-two-fifth { width: 40%; display: inline-block;	vertical-align: top;}
+.col-three-fifth { width: 60%; display: inline-block; vertical-align: top;}
+.col-four-fifth { width: 80%; display: inline-block; vertical-align: top;}
+.col-fifteen-percent { width: 15%; display: inline-block; vertical-align: top;}
+.col-thirty-percent { width: 30%; display: inline-block; vertical-align: top;}
+
+.space {width: 1px; height: 10px;}
+.space5 {width: 1px; height: 5px;}
+.space15 {width: 1px; height: 15px;}
+.space20 {width: 1px; height: 20px;}
+.space25 {width: 1px; height: 25px;}
+.space50 {width: 1px; height: 50px;}
+.space100 {width: 1px; height: 100px;}
+.space200 {width: 1px; height: 200px;}
+.space400 {width: 1px; height: 400px;}
+
+.tab {width: 10px; height: 1px; display: inline-block; overflow: hidden;}
+.tab20 {width: 20px; height: 1px; display: inline-block; overflow: hidden;}
+.tab25 {width: 25px; height: 1px; display: inline-block; overflow: hidden;}
+.tab50 {width: 50px; height: 1px; display: inline-block; overflow: hidden;}
+
+.nl {width: 15px;height: 0px;display: block;}
+
+.hidden {
+	display: none;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+.transparent {
+	opacity: 0.5;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.verticalAlignMiddle {
+	vertical-align: middle;
+}
+
+.verticalAlignTop {
+	vertical-align: top;
+}
+
+.verticalAlignBottom {
+	vertical-align: bottom;
+}
+
+.clear {
+	clear: both;
+}
+
+.strong {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+
+/* --- FONTS --- */
+
+@font-face {
+    font-family: 'cuprum';
+    src: url('../fonts/cuprum/cuprum-regular-webfont.eot');
+    src: url('../fonts/cuprum/cuprum-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/cuprum/cuprum-regular-webfont.woff2') format('woff2'),
+         url('../fonts/cuprum/cuprum-regular-webfont.woff') format('woff'),
+         url('../fonts/cuprum/cuprum-regular-webfont.ttf') format('truetype'),
+         url('../fonts/cuprum/cuprum-regular-webfont.svg#cuprumregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

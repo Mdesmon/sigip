@@ -1,0 +1,89 @@
+body {
+    overflow: auto;
+}
+
+#menuLateral {
+    width: 250px;
+    height: 100%;
+    padding: 15px;
+    padding-top: 80px;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: default;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+#page {
+    width: 100%;
+    box-sizing: border-box;
+}
+#menuLateral + #page {
+    padding-left: 250px;
+}
+
+#list-item {
+    text-align: center;
+}
+
+#list-item .item {
+    width: 200px;
+    height: 260px;
+    line-height: 220px;
+    font-size: 130px;
+    text-align: center;
+    margin: 20px;
+    background: rgb(200, 200, 200);
+    background-image: linear-gradient(to bottom, rgb(230, 230, 230) 0%,rgb(160, 160, 160) 100%);
+    text-shadow: 0 0 10px rgba(0, 0, 0, .4);
+    box-shadow: 0 0 15px rgba(0, 0, 0, .4);
+    cursor: pointer;
+    transition: .15s;
+    display: inline-block;
+    position: relative;
+}
+#list-item .item:hover {
+    transform: translateY(-12px);
+}
+
+#list-item .item .title {
+    width: 100%;
+    line-height: 40px;
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.app-logo {
+    margin: 25px auto 50px;
+}
+
+a .btnVst {
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 0;
+    }
+	#menuLateral {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    #page {
+        padding-left: 0;
+    }
+    #menuLateral + #page {
+        padding-left: 0;
+    }
+    .app-logo {
+        width: 100%;
+        margin: 15px 0 20px;
+    }
+}
