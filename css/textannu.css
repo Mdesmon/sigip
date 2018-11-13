@@ -9,13 +9,18 @@ h1 {
     margin: 50px auto;
 }
 
-#fiche {
-    width: 900px;
-    max-width: 95%;
-    padding: 1em;
-    margin: auto;
-    background: white;
-    border: 1px solid black;
-    box-shadow: 0 0 8px rgba(0, 0, 0, .5);
-    box-sizing: border-box;
+.fiche {
+    padding: 3em 2em;
+    background-color: rgba(255, 255, 255, .5);
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: .5em;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+}
+
+/* Pickadate */
+.picker select {
+    padding: 6px;
+    font-size: 16px;
+    line-height: 1.2;
+    color: #000000;
 }
