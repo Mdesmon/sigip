@@ -26,6 +26,7 @@ header {
     height: 90px;
     line-height: 60px;
     padding: 15px;
+    text-align: center;
     background: #718093;
     background: linear-gradient(to bottom, #000000b2 0%, rgba(38, 44, 51, 0.3) 100%);
     text-shadow: 1px 1px 0 rgba(0, 0, 0, .5);
@@ -35,7 +36,7 @@ header {
     left: 0;
 }
 header #logo_organization {
-    max-width: 250px;
+    max-width: 180px;
     height: 80px;
     margin: 5px 15px;
     position: absolute;
@@ -43,13 +44,12 @@ header #logo_organization {
     left: 0;
 }
 header nav {
-    width: 520px;
+    width: auto;
+    margin: auto;
     font-size: 20px;
     vertical-align: top;
-    text-align: center;
+    position: relative;
     display: inline-block;
-    position: absolute;
-    left: 280px;
 }
 header nav .item {
     padding: 0 10px;
@@ -529,30 +529,21 @@ table {
 
 
 
-@media (max-width: 900px) {
+@media (max-width: 930px) {
     header nav {
-        width: auto;
         font-size: 30px;
     }
     header nav .text {
         display: none;
     }
 }
-@media (max-width: 570px) {
+@media (max-width: 620px) {
     body {
         padding: 0;
     }
     header {
         height: auto;
         position: initial;
-    }
-    header nav {
-        width: 200px;
-        margin: auto;
-        display: block;
-        position: relative;
-        top: 0;
-        left: 0;
     }
     header #logo_organization {
         width: auto;

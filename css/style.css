@@ -42,6 +42,7 @@ hr.center {
 	height:50px;
 	font-size: 16px;
 	font-family: Cuprum;
+	text-align: left;
     border: 2px solid grey;
     border-radius: 100%;
     background: center url('../api/user_avatar.php');
