@@ -27,6 +27,7 @@ header {
     line-height: 60px;
     padding: 15px;
     text-align: center;
+    font-family: Cuprum;
     background: #718093;
     background: linear-gradient(to bottom, #000000b2 0%, rgba(38, 44, 51, 0.3) 100%);
     text-shadow: 1px 1px 0 rgba(0, 0, 0, .5);
@@ -43,10 +44,18 @@ header #logo_organization {
     top: 0;
     left: 0;
 }
+header a { /* Bootstrap */
+    color: white;
+}
+header a:hover, header a:focus { /* Bootstrap */
+    color: white;
+    text-decoration: none;
+}
 header nav {
     width: auto;
     margin: auto;
     font-size: 20px;
+    text-decoration: none;
     vertical-align: top;
     position: relative;
     display: inline-block;
