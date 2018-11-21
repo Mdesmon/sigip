@@ -9,7 +9,7 @@
 		exit();
 	}
 
-	$rnes = [];
+	$etablissements = EtablissementsManager::getAllEtablissements();
 
 	// Javascript regex
 	$regex_name = "^[A-Za-zÀ-ÖØ-öø-ÿ \-]+$";
@@ -27,7 +27,7 @@
 		include '../includes/head.html';
 	?>
 
-    <title>Formulaire d'inscription</title>
+    <title>Formulaire de saisie</title>
 
 	<link rel="stylesheet" type="text/css" href="../node_modules/pickadate/lib/themes/classic.css">
 	<link rel="stylesheet" type="text/css" href="../node_modules/pickadate/lib/themes/classic.date.css">
@@ -44,7 +44,7 @@
   <body>
   	<?php include '../includes/avatar.php'; ?>
 	
-    <h1>Formulaire d'inscription</h1>
+    <h1>Formulaire de saisie</h1>
 
 	<div class="container fiche">
 		<form action="" method="post">
@@ -89,8 +89,8 @@
 						<select type="text" name="civilite" id="civilite" class="form-control" title="">
 							<option disabled selected> -- Choisir une option -- </option>
 							<?php
-								foreach ($rnes as $rne) {
-									echo '<option value=""></option>' . PHP_EOL;
+								foreach ($etablissements as $e) {
+									printf('<option value="%s">%s %s</option>', $e->id(), $e->name(), $e->rne());
 								}
 							?>
 						</select>
@@ -134,7 +134,6 @@
 				</div>
 				
 			</div>
-			
 			
 
 			<div class="row">

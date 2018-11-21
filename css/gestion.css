@@ -434,8 +434,6 @@ table {
 	display: inline-block;
 }
 
-
-
 /* GESTION SESSIONS DEBUT */
 
 .circle-info {
@@ -457,25 +455,25 @@ table {
 	text-align: center;
 }
 
-#fenetreModifier, #fenetreVoir, #fenetreMdp {
+#menuCreer, #menuModifier, #menuVoir, #menuMdp {
 	width: 500px;
-	padding: 17px;
 	background-color: #676d7a;
 	background-image: linear-gradient(to bottom, rgba(255,255,255,.3) 0%,rgba(255,255,255,.0) 30%,rgba(0,0,0,.2) 60%,rgba(0,0,0,.2) 100%);
-	animation: zoom .3s;
+	animation: zoomIn .3s;
 	position: absolute;
 }
-#fenetreModifier .title, #fenetreVoir .title, #fenetreMdp .title {
+
+#menuModifier input {
+	vertical-align: unset;
+}
+
+.menu .title {
 	font-size: 22px;
 	top: 10px;
 	left: 25px;
 	position: absolute;
 }
-#fenetreModifier input {
-	vertical-align: unset;
-}
-
-#fenetreModifier_btnValider {
+.menu .btnValider {
 	width: 50%;
 	box-sizing: border-box;
 	line-height: 25px;
@@ -484,8 +482,7 @@ table {
 	right: 0;
 	bottom: 0;
 }
-
-#fenetreModifier_btnAnnuler {
+.menu .btnAnnuler {
 	width: 50%;
 	box-sizing: border-box;
 	line-height: 25px;
@@ -495,18 +492,18 @@ table {
 	bottom: 0;
 }
 
-#fenetreModifier_btnModifier {
+#menuModifier_btnModifier {
 	width: 150px;
 	margin: auto;
 	display: block;
 }
-#fenetreModifier_btnChangerMdp {
+#menuModifier_btnChangerMdp {
 	width: 205px;
 	margin: auto;
 	display: block;
 }
 
-#fenetreVoir_btnFermer {
+#menuVoir_btnFermer {
 	width: 250px;
 	margin: auto;
 	display: block;

@@ -12,10 +12,17 @@
                 <div class="underline"></div>
             </div>
         </a>
+        <a href="gestion_etablissements.php">
+            <div class="item <?php if (basename($_SERVER['PHP_SELF']) === "gestion_etablissements.php") echo "active"; ?>">
+                <div class="icon div home"></div>
+                <div class="text">Etablissements</div>
+                <div class="underline"></div>
+            </div>
+        </a>
         <a href="gestion_utilisateurs.php">
             <div class="item <?php if (basename($_SERVER['PHP_SELF']) === "gestion_utilisateurs.php") echo "active"; ?>">
                 <div class="icon div userGroup"></div>
-                <div class="text">Gestion utilisateurs</div>
+                <div class="text">Utilisateurs</div>
                 <div class="underline"></div>
             </div>
         </a>

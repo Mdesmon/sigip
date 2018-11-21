@@ -129,7 +129,7 @@
 					
 						if($modificationAutorise) {
 							echo '  <div class="btnSpringtime blue" onclick="copierSession('. $s->id() .')">Copier</div>
-									<div class="btnSpringtime" onclick="afficherFenetreModifier('. $s->id() .')">Modifier</div>
+									<div class="btnSpringtime" onclick="affichermenuModifier('. $s->id() .')">Modifier</div>
 									<div class="btnSpringtime red" onclick=\'deplacerDansCorbeille("'. $s->id() .'")\'>Supprimer</div>';	// Le premier espace est important
 						}
 							
@@ -148,7 +148,7 @@
 						echo '		<div class="btnSpringtime green" onclick="entrerSession('. $s->id() .')">Consulter</div>';
 					
 						if($modificationAutorise) {
-							echo '  <div class="btnSpringtime" onclick="afficherFenetreModifier('. $s->id() .')">Modifier</div>
+							echo '  <div class="btnSpringtime" onclick="affichermenuModifier('. $s->id() .')">Modifier</div>
 									<div class="btnSpringtime red" onclick=\'deplacerDansCorbeille("'. $s->id() .'")\'>Supprimer</div>';	// Le premier espace est important
 						}
 							
@@ -161,7 +161,7 @@
 						echo '		<div class="btnSpringtime green" onclick="entrerSession('. $s->id() .')">Entrer</div>';
 					
 						if($modificationAutorise) {
-							echo '  <div class="btnSpringtime" onclick="afficherFenetreModifier('. $s->id() .')">Modifier</div>
+							echo '  <div class="btnSpringtime" onclick="affichermenuModifier('. $s->id() .')">Modifier</div>
 									<div class="btnSpringtime red" onclick=\'deplacerDansCorbeille("'. $s->id() .'")\'>Supprimer</div>';	// Le premier espace est important
 						}
 							
@@ -225,13 +225,13 @@
 		<div class="bumpBottom"></div>
 	</div>
 
-	<div id="fenetreModifier" class="helly">
+	<div id="menuModifier" class="helly">
 		<div class="title">Paramètre de la sessions</div>
 		<div class="space50"></div>
-		Nom de la session : <input id="fenetreModifier_name" class="springtime" type="text" /> <div id="fenetreModifier_name_check" class="icon div"></div>
+		Nom de la session : <input id="menuModifier_name" class="springtime" type="text" /> <div id="menuModifier_name_check" class="icon div"></div>
 		<div class="space"></div>
 		Etat de la session :
-		<select name="etat" id="fenetreModifier_state">
+		<select name="etat" id="menuModifier_state">
 			<option value="<?php echo OPEN; ?>">Ouvert</option>
 			<option value="<?php echo CLOSED; ?>">Fermé</option>
 			<option value="<?php echo DRAFT; ?>">Brouillon</option>
@@ -241,10 +241,10 @@
 		</select>
 
 		<div class="space25"></div>
-		<div id="fenetreModifier_btnModifier" class="btnHelly blue icon pen3" onclick="modifierSession()">Modifier la session</div>
+		<div id="menuModifier_btnModifier" class="btnHelly blue icon pen3" onclick="modifierSession()">Modifier la session</div>
 		<div class="space50"></div>
-		<div id="fenetreModifier_btnValider" class="btnSpringtime green icon right-medium" onclick="fenetreModifier_valide();"></div>
-		<div id="fenetreModifier_btnAnnuler" class="btnSpringtime red icon wrong-medium" onclick="hide(fenetreModifier);hide(voile);"></div>
+		<div id="menuModifier_btnValider" class="btnSpringtime green icon right-medium" onclick="menuModifier_valide();"></div>
+		<div id="menuModifier_btnAnnuler" class="btnSpringtime red icon wrong-medium" onclick="hide(menuModifier);hide(voile);"></div>
 	</div>
 
 	<div id="info_etats" class="deepBlue" onclick="hide(this);">
@@ -292,17 +292,17 @@
 	var selectOrganisation = document.getElementById('selectOrganisation');
 	var autresActions = document.getElementById('autresActions');
 	var info_etats = document.getElementById('info_etats');
-	var fenetreModifier = document.getElementById('fenetreModifier');
-	var fenetreModifier_name = document.getElementById('fenetreModifier_name');
-	var fenetreModifier_name_check = document.getElementById('fenetreModifier_name_check');
-	var fenetreModifier_state = document.getElementById('fenetreModifier_state');
-	var fenetreModifier_btnModifier = document.getElementById('fenetreModifier_btnModifier');
+	var menuModifier = document.getElementById('menuModifier');
+	var menuModifier_name = document.getElementById('menuModifier_name');
+	var menuModifier_name_check = document.getElementById('menuModifier_name_check');
+	var menuModifier_state = document.getElementById('menuModifier_state');
+	var menuModifier_btnModifier = document.getElementById('menuModifier_btnModifier');
 	var voile = document.getElementById('voile');
 
 	var selectedSession = null;	// Pour copier, lien et code
 	var nouveauNom = null;	// nom de la copie
-	var elements_repositioning = [popupLien, popupCode, info_etats, fenetreModifier];
-	var elements_reset = [popupLien, popupCode, info_etats, fenetreModifier];
+	var elements_repositioning = [popupLien, popupCode, info_etats, menuModifier];
+	var elements_reset = [popupLien, popupCode, info_etats, menuModifier];
 
 	<?php
 		if(is_null($activeOrganization_id) OR $activeOrganization_id == NO_ACTIVE_ORGANIZATION)
@@ -323,7 +323,7 @@
 
 
 	resize();
-	hide(fenetreModifier);
+	hide(menuModifier);
 	
 	/* EVENTS */
 
@@ -379,13 +379,13 @@
 		ajax_changeViewSessionState(this.value);
 	};
 
-	fenetreModifier_name.onchange = function() {
-		if(fenetreModifier_name.value === sessions[selectedSession].name) {
-			fenetreModifier_name_check.className = "div icon";
-			fenetreModifier_name_check.innerHTML = "";
+	menuModifier_name.onchange = function() {
+		if(menuModifier_name.value === sessions[selectedSession].name) {
+			menuModifier_name_check.className = "div icon";
+			menuModifier_name_check.innerHTML = "";
 		}
 		else
-			ajax_nameExists(fenetreModifier_name.value, sessions[selectedSession].organization);
+			ajax_nameExists(menuModifier_name.value, sessions[selectedSession].organization);
 	};
 
 	voile.onmousedown = function(e) {
@@ -403,7 +403,7 @@
 		formCreerSession.submit();
 	}
 
-	function afficherFenetreModifier(session_id) {
+	function affichermenuModifier(session_id) {
 		var session = sessions[session_id];
 
 		selectedSession = session_id;
@@ -412,30 +412,30 @@
 		hide(popupCode);
 		
 		show(voile);
-		show(fenetreModifier);
-		fenetreModifier_name.value = session['name'];
-		fenetreModifier_state.value = session['state'];
-		fenetreModifier_name_check.className = "div icon";
-		fenetreModifier_name_check.innerHTML = "";
+		show(menuModifier);
+		menuModifier_name.value = session['name'];
+		menuModifier_state.value = session['state'];
+		menuModifier_name_check.className = "div icon";
+		menuModifier_name_check.innerHTML = "";
 	}
 
-	function fenetreModifier_valide() {
+	function menuModifier_valide() {
 		var empty = true;
 		var changes = {};
 
-		if(fenetreModifier_name.value !== sessions[selectedSession].name) {
-			changes.name = fenetreModifier_name.value;
+		if(menuModifier_name.value !== sessions[selectedSession].name) {
+			changes.name = menuModifier_name.value;
 			empty = false;
 		}
-		if(fenetreModifier_state.value !== sessions[selectedSession].state) {
-			changes.state = fenetreModifier_state.value;
+		if(menuModifier_state.value !== sessions[selectedSession].state) {
+			changes.state = menuModifier_state.value;
 			empty = false;
 		}
 		
 		if(!empty)
 			ajax_modifierSession(selectedSession, changes);
 		else {
-			hide(fenetreModifier);
+			hide(menuModifier);
 			hide(voile);
 		}
 	}
@@ -536,14 +536,14 @@
 	    	return false;
 		
 		if(xhr.response === "false") {
-			fenetreModifier_name_check.className = "div icon right";
-			fenetreModifier_name_check.style.color = "lime";
-			fenetreModifier_name_check.innerHTML = "";
+			menuModifier_name_check.className = "div icon right";
+			menuModifier_name_check.style.color = "lime";
+			menuModifier_name_check.innerHTML = "";
 		}
 		else {
-			fenetreModifier_name_check.className = "div icon wrong";
-			fenetreModifier_name_check.style.color = "red";
-			fenetreModifier_name_check.innerHTML = " Ce nom existe déjà";
+			menuModifier_name_check.className = "div icon wrong";
+			menuModifier_name_check.style.color = "red";
+			menuModifier_name_check.innerHTML = " Ce nom existe déjà";
 		}
 	}
 	

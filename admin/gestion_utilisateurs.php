@@ -100,9 +100,9 @@
 							echo '<td style="width: 150px;">';
 
 							if(Controls::user_modify($user))
-								echo '<div class="btnSpringtime blue" onclick="afficherFenetreModifier('. $key .')" style="width:43px;">Modifier</div> ';
+								echo '<div class="btnSpringtime blue" onclick="affichermenuModifier('. $key .')" style="width:43px;">Modifier</div> ';
 							else
-								echo '<div class="btnSpringtime" onclick="afficherFenetreVoir('. $key .')" style="width:43px;">Voir</div> ';
+								echo '<div class="btnSpringtime" onclick="affichermenuVoir('. $key .')" style="width:43px;">Voir</div> ';
 							
 							echo '<div class="btnSpringtime red" onclick="ajax_supprimerUntilisateur('. $key .')">Supprimer</div>
 								  </td>';
@@ -130,35 +130,35 @@
 
 	<div id="voile"></div>
 
-	<div id="fenetreVoir" class="helly" style="display:none">
+	<div id="menuVoir" class="menu helly" style="display:none">
 		<div class="title">Fiche utilisateur</div>
 		<div class="space50"></div>
-		Nom utilisateur : <span id="fenetreVoir_username"></span>
+		Nom utilisateur : <span id="menuVoir_username"></span>
 		<div class="space"></div>
-		Prénom : <span id="fenetreVoir_name"></span>
+		Prénom : <span id="menuVoir_name"></span>
 		<div class="space"></div>
-		Nom : <span id="fenetreVoir_lastname"></span>
+		Nom : <span id="menuVoir_lastname"></span>
 		<div class="space"></div>
-		Email : <span id="fenetreVoir_email"></span>
+		Email : <span id="menuVoir_email"></span>
 		<div class="space"></div>
 
 		<div class="space25"></div>
-		<div id="fenetreVoir_btnFermer" class="btnHelly blue" onclick="hide(fenetreVoir);hide(voile);">Fermer</div>
+		<div id="menuVoir_btnFermer" class="btnHelly blue" onclick="hide(menuVoir);hide(voile);">Fermer</div>
 	</div>
 	
-	<div id="fenetreModifier" class="helly" style="display:none">
+	<div id="menuModifier" class="menu helly" style="display:none">
 		<div class="title">Paramètres de l'utilisateur</div>
 		<div class="space50"></div>
-		Nom utilisateur : <span id="fenetreModifier_username"></span>
+		Nom utilisateur : <span id="menuModifier_username"></span>
 		<div class="space"></div>
-		Prénom : <input id="fenetreModifier_name" class="springtime" type="text" />
+		Prénom : <input id="menuModifier_name" class="springtime" type="text" />
 		<div class="space"></div>
-		Nom : <input id="fenetreModifier_lastName" class="springtime" type="text" />
+		Nom : <input id="menuModifier_lastName" class="springtime" type="text" />
 		<div class="space"></div>
-		Email : <input id="fenetreModifier_email" class="springtime" type="text" />
+		Email : <input id="menuModifier_email" class="springtime" type="text" />
 		<div class="space"></div>
 		Organisation :
-		<select name="etat" id="fenetreModifier_organization">
+		<select name="etat" id="menuModifier_organization">
 			<?php 
 				if(Controls::inPrimaryOrganization())
 					echo '<option value=""></option>';
@@ -168,43 +168,43 @@
 		</select>
 
 		<div class="space25"></div>
-		<div id="fenetreModifier_btnChangerMdp" class="btnHelly red icon padlock" onclick="hide(fenetreModifier);show(fenetreMdp);centerOnScreen(fenetreMdp);"> Modifier le mot de passe</div>
+		<div id="menuModifier_btnChangerMdp" class="btnHelly red icon padlock" onclick="hide(menuModifier);show(menuMdp);centerOnScreen(menuMdp);"> Modifier le mot de passe</div>
 		<div class="space50"></div>
-		<div id="fenetreModifier_btnValider" class="btnSpringtime green icon right-medium" onclick="fenetreModifier_valide();"></div>
-		<div id="fenetreModifier_btnAnnuler" class="btnSpringtime red icon wrong-medium" onclick="hide(fenetreModifier);hide(voile);"></div>
+		<div id="menuModifier_btnValider" class="btnValider btnSpringtime green icon right-medium" onclick="menuModifier_valide();"></div>
+		<div id="menuModifier_btnAnnuler" class="btnAnnuler btnSpringtime red icon wrong-medium" onclick="hide(menuModifier);hide(voile);"></div>
 	</div>
 
-	<div id="fenetreMdp" class="helly" style="display:none">
+	<div id="menuMdp" class="menu helly" style="display:none">
 		<div class="title">Changer le mot de passe</div>
 		<div class="space50"></div>
-		Nouveau mot de passe : <input id="fenetreMdp_password" class="springtime" type="text" />
+		Nouveau mot de passe : <input id="menuMdp_password" class="springtime" type="text" />
 		<div class="space"></div>
 		<?php if(MAIL_ENABLED): ?>
-			<input type="checkbox" name="" id="fenetreMdp_email" checked=""> Envoyer un mail a l'utilisateur
+			<input type="checkbox" name="" id="menuMdp_email" checked=""> Envoyer un mail a l'utilisateur
 		<?php endif; ?>
 		
 		
 		<div class="space25"></div>
-		<div id="fenetreMdp_btnFermer" class="btnHelly" onclick="hide(fenetreMdp);hide(voile);">Annuler</div>
-		<div id="fenetreMdp_btnEnvoyer" class="btnHelly green" onclick="hide(fenetreMdp);hide(voile);ajax_changeUserPassword();">Changer mot de passe</div>
+		<div id="menuMdp_btnFermer" class="btnHelly red" onclick="hide(menuMdp);hide(voile);">Annuler</div>
+		<div id="menuMdp_btnEnvoyer" class="btnHelly green" onclick="hide(menuMdp);hide(voile);ajax_changeUserPassword();">Changer mot de passe</div>
 	</div>
 
 <script src="../node_modules/atomjs/atom.js"></script>
 <script>
 	var tbody = document.getElementById('tbody');
 	var selectOrganisation = document.getElementById('selectOrganisation');
-	var fenetreModifier = document.getElementById('fenetreModifier');
-	var fenetreModifier_name = document.getElementById('fenetreModifier_name');
-	var fenetreModifier_lastName = document.getElementById('fenetreModifier_lastName');
-	var fenetreModifier_email = document.getElementById('fenetreModifier_email');
-	var fenetreModifier_organization = document.getElementById('fenetreModifier_organization');
-	var fenetreMdp = document.getElementById('fenetreMdp');
-	var fenetreMdp_password = document.getElementById('fenetreMdp_password');
-	var fenetreMdp_email = document.getElementById('fenetreMdp_email');
-	var fenetreVoir = document.getElementById('fenetreVoir');
-	var fenetreVoir_name = document.getElementById('fenetreVoir_name');
-	var fenetreVoir_lastName = document.getElementById('fenetreVoir_lastName');
-	var fenetreVoir_email = document.getElementById('fenetreVoir_email');
+	var menuModifier = document.getElementById('menuModifier');
+	var menuModifier_name = document.getElementById('menuModifier_name');
+	var menuModifier_lastName = document.getElementById('menuModifier_lastName');
+	var menuModifier_email = document.getElementById('menuModifier_email');
+	var menuModifier_organization = document.getElementById('menuModifier_organization');
+	var menuMdp = document.getElementById('menuMdp');
+	var menuMdp_password = document.getElementById('menuMdp_password');
+	var menuMdp_email = document.getElementById('menuMdp_email');
+	var menuVoir = document.getElementById('menuVoir');
+	var menuVoir_name = document.getElementById('menuVoir_name');
+	var menuVoir_lastName = document.getElementById('menuVoir_lastName');
+	var menuVoir_email = document.getElementById('menuVoir_email');
 	var voile = document.getElementById('voile');
 	var selectedUser = null;
 	var users = <?php echo json_encode($users) ?>;
@@ -230,63 +230,63 @@
 		tbody.style.maxHeight = (getInnerHeight() - 275) + "px";
 	}
 
-	function afficherFenetreVoir(index) {
+	function affichermenuVoir(index) {
 		var user = users[index];
 		
 		show(voile);
-		show(fenetreVoir);
-		centerOnScreen(fenetreVoir);
+		show(menuVoir);
+		centerOnScreen(menuVoir);
 
-		fenetreVoir_username.innerHTML = user["username"];
-		fenetreVoir_name.innerHTML = user["name"];
-		fenetreVoir_lastname.innerHTML = user["lastName"];
-		fenetreVoir_email.innerHTML = user['email'];
+		menuVoir_username.innerHTML = user["username"];
+		menuVoir_name.innerHTML = user["name"];
+		menuVoir_lastname.innerHTML = user["lastName"];
+		menuVoir_email.innerHTML = user['email'];
 	}
 
-	function afficherFenetreModifier(index) {
+	function affichermenuModifier(index) {
 		var user = users[index];
 		
 		show(voile);
-		show(fenetreModifier);
-		centerOnScreen(fenetreModifier);
+		show(menuModifier);
+		centerOnScreen(menuModifier);
 
-		fenetreModifier_username.innerHTML = user["username"];
-		fenetreModifier_name.value = user["name"];
-		fenetreModifier_lastName.value = user["lastName"];
-		fenetreModifier_email.value = user['email'];
+		menuModifier_username.innerHTML = user["username"];
+		menuModifier_name.value = user["name"];
+		menuModifier_lastName.value = user["lastName"];
+		menuModifier_email.value = user['email'];
 
-		if(!selectIndexOf(fenetreModifier_organization, user['organization']))
-			fenetreModifier_organization.selectedIndex = "0";
+		if(!selectIndexOf(menuModifier_organization, user['organization']))
+			menuModifier_organization.selectedIndex = "0";
 
 		selectedUser = index;
 	}
 
-	function fenetreModifier_valide() {
+	function menuModifier_valide() {
 		var empty = true;
 		var user = users[selectedUser];
 		var changes = {};
 
-		if(fenetreModifier_name.value !== user.name) {
-			changes.name = fenetreModifier_name.value;
+		if(menuModifier_name.value !== user.name) {
+			changes.name = menuModifier_name.value;
 			empty = false;
 		}
-		if(fenetreModifier_lastName.value !== user.lastName) {
-			changes.lastName = fenetreModifier_lastName.value;
+		if(menuModifier_lastName.value !== user.lastName) {
+			changes.lastName = menuModifier_lastName.value;
 			empty = false;
 		}
-		if(fenetreModifier_email.value !== user.email) {
-			changes.email = fenetreModifier_email.value;
+		if(menuModifier_email.value !== user.email) {
+			changes.email = menuModifier_email.value;
 			empty = false;
 		}
-		if(fenetreModifier_organization.value !== user.organization) {
-			if(fenetreModifier_organization.value === "") {
+		if(menuModifier_organization.value !== user.organization) {
+			if(menuModifier_organization.value === "") {
 				if(user.organization !== null) {
-					changes.organization = fenetreModifier_organization.value;
+					changes.organization = menuModifier_organization.value;
 					empty = false;
 				}
 			}
 			else {
-				changes.organization = fenetreModifier_organization.value;
+				changes.organization = menuModifier_organization.value;
 				empty = false;
 			}
 		}
@@ -294,7 +294,7 @@
 		if(!empty)
 			ajax_modifierUtilisateur(user.id, changes);
 		else {
-			hide(fenetreModifier);
+			hide(menuModifier);
 			hide(voile);
 		}
 	}
@@ -338,7 +338,7 @@
 	    if(xhr.readyState != xhr.DONE || xhr.status != 200)	// DONE = 4 ; 200 = OK
 	    	return false;
 		
-		fenetreMdp_password.value = "";
+		menuMdp_password.value = "";
 	    alert('Le mot de passe a bien été changé.');
 	}
 
@@ -369,14 +369,14 @@
 	};
 
 	function ajax_changeUserPassword(){
-		if(fenetreMdp_email)
-			var email = fenetreMdp_email.checked ? 1 : 0;
+		if(menuMdp_email)
+			var email = menuMdp_email.checked ? 1 : 0;
 		else
 			var email = 0;
 
 		xhrChangeUserPassword.open("POST", "../ajax/changeUserPassword.php", true);
 		xhrChangeUserPassword.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");	// Pour post il faut changer le type MIME
-		xhrChangeUserPassword.send("id_user="+ users[selectedUser].id + "&newPassword="+ encodeURIComponent(fenetreMdp_password.value) +"&email="+ email);
+		xhrChangeUserPassword.send("id_user="+ users[selectedUser].id + "&newPassword="+ encodeURIComponent(menuMdp_password.value) +"&email="+ email);
 	};
 
 </script>

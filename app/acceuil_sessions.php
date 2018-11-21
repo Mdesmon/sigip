@@ -19,11 +19,18 @@
 	
 	<link rel="stylesheet" type="text/css" href="../css/acceuil_sessions.css">
 	
-	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
-	
 	<title>Bienvenue</title>
+
+	<style>
+		body {
+			padding: 40px;
+		}
+		.session {
+			cursor: pointer;
+		}
+	</style>
 </head>
-<body style="padding: 40px;">
+<body>
 
 	<?php include '../includes/avatar.php'; ?>
 
@@ -46,7 +53,7 @@
 						continue;
 					
 					echo "
-						<div class='steam' onclick='entrerSession(". $s->id() .")'>
+						<div class='session steam' onclick='entrerSession(". $s->id() .")'>
 							<div class='titre'>". $s->name() ."</div>
 						</div>
 					";
@@ -97,29 +104,6 @@
 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");	// Pour post il faut changer le type MIME
 		xhr.send("id_session="+ encodeURIComponent(id_session) +"&id_utilisateur="+ encodeURIComponent(id_utilisateur));
 	}
-	
-	// retourne un objet xmlHttpRequest. Méthode compatible entre tous les navigateurs (IE/Firefox/Opera)
-	function new XMLHttpRequest(){
-		var xhr=null;
-		if(window.XMLHttpRequest) // Firefox et autres
-			xhr = new XMLHttpRequest();
-		else if(window.ActiveXObject){ // Internet Explorer
-			try {
-				xhr = new ActiveXObject("Msxml2.XMLHTTP");
-			} catch (e) {
-				try {
-					xhr = new ActiveXObject("Microsoft.XMLHTTP");
-				} catch (e1) {
-					xhr = null;
-				}
-			}
-		}
-		else { // XMLHttpRequest non supporté par le navigateur
-			alert("Votre navigateur ne supporte pas les objets XMLHTTPRequest...");
-		}
-		return xhr;
-	}
-	
 	
 </script>
 

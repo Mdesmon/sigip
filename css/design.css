@@ -405,6 +405,7 @@ input.outline.lime {color: lime; border-color: lime;}
 
 
 .helly {
+	color: white;
 	line-height: 20px;
 	border: 2px solid #353536;
     border-radius: 4px;
@@ -412,8 +413,8 @@ input.outline.lime {color: lime; border-color: lime;}
     font-size: 15px;
     font-family: Tahoma, "Open Sans", sans-serif;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, .5);
-    background-color: red;
-    background-image: linear-gradient(to bottom, rgba(255,255,255,.3) 0%,rgba(255,255,255,.3) 50%,rgba(0,0,0,.2) 51%,rgba(0,0,0,.2) 100%);
+	background-color: #676d7a;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,.3) 0%,rgba(255,255,255,.0) 30%,rgba(0,0,0,.2) 60%,rgba(0,0,0,.2) 100%);
 	background-clip: padding-box;
 	box-shadow: 0 0 0 2px rgba(255, 255, 255, .2) inset, 0 1px 3px rgba(0, 0, 0, 0.25);
 }
@@ -429,7 +430,7 @@ input.outline.lime {color: lime; border-color: lime;}
     font-size: 15px;
     font-family: Tahoma, "Open Sans", sans-serif;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, .5);
-    background-color: red;
+    background-color: #676d7a;
     background-image: linear-gradient(to bottom, rgba(255,255,255,.3) 0%,rgba(255,255,255,.3) 50%,rgba(0,0,0,.2) 51%,rgba(0,0,0,.2) 100%);
 	background-clip: padding-box;
 	box-shadow: 0 0 0 2px rgba(255, 255, 255, .2) inset, 0 1px 3px rgba(0, 0, 0, 0.25);
@@ -442,6 +443,7 @@ input.outline.lime {color: lime; border-color: lime;}
 	padding-bottom: 4px;
 }
 .btnHelly.blue {background-color: #2e7aff;}
+.btnHelly.red {background-color: red;}
 .btnHelly.green {background-color: #0c0;}
 .btnHelly.black {background-color: #3c3c3c;}
 

@@ -143,6 +143,13 @@ CREATE TABLE IF NOT EXISTS Utilisateurs (
 	KEY organisation (organisation)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
+CREATE TABLE IF NOT EXISTS Etablissements (
+  id int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  name varchar(255) DEFAULT NULL,
+  rne char(8) NOT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
 ALTER TABLE Inscriptions
 	ADD CONSTRAINT fk_inscriptions_session FOREIGN KEY (session) REFERENCES Sessions (id),
 	ADD CONSTRAINT fk_inscriptions_utilisateur FOREIGN KEY (utilisateur) REFERENCES Utilisateurs (id);

@@ -32,6 +32,10 @@
 	</a>
 	<div class="space"></div>
 	<div>ADMIN :</div>
+	<a href="../admin/gestion_etablissements.php">
+		<div class="btnVst"><div class="icon div-indent home"></div>Etablissements</div>
+	</a>
+	<div class="space"></div>
 	<a href="../admin/parametres_generaux.php">
 		<div class="btnVst"><div class="icon div-indent wheel2"></div>Parametres Generaux</div>
 	</a>
