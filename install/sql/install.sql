@@ -147,8 +147,41 @@ CREATE TABLE IF NOT EXISTS Etablissements (
   id int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   name varchar(255) DEFAULT NULL,
   rne char(8) NOT NULL,
-  PRIMARY KEY (id)
+  PRIMARY KEY (id),
+  KEY rne (rne)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS Textannu (
+  id int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  numen varchar(255) NOT NULL,
+  sn varchar(255) NOT NULL,
+  nompatro varchar(255) NOT NULL,
+  givenname varchar(255) NOT NULL,
+  datenaissance date DEFAULT NULL,
+  codecivilite varchar(3) NOT NULL,
+  grade varchar(255) DEFAULT NULL,
+  title varchar(255) NOT NULL,
+  discipline varchar(255) DEFAULT NULL,
+  rne varchar(255) NOT NULL,
+  rneextract varchar(255) NOT NULL,
+  finfonction varchar(255) DEFAULT NULL COMMENT 'FF ou NULL',
+  dateff date DEFAULT NULL,
+  typensi varchar(255) NOT NULL DEFAULT 'GIP',
+  codemodif char(1) NOT NULL DEFAULT 'C',
+  mondossier varchar(255) NOT NULL DEFAULT '9',
+  mailmondossier varchar(255) DEFAULT NULL,
+  fredurne varchar(255) NOT NULL,
+  fredufonctadm varchar(255) NOT NULL,
+  fredurneresp varchar(255) DEFAULT NULL,
+  freduotp varchar(255) NOT NULL,
+  freduotpresp varchar(255) DEFAULT NULL,
+  oldemployeenumber varchar(255) DEFAULT NULL,
+  PRIMARY KEY (id),
+  KEY rne (rne)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE Textannu
+	ADD CONSTRAINT fk_textannu_rne FOREIGN KEY (rne) REFERENCES Etablissements (rne);
 
 ALTER TABLE Inscriptions
 	ADD CONSTRAINT fk_inscriptions_session FOREIGN KEY (session) REFERENCES Sessions (id),
