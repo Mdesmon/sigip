@@ -10,10 +10,16 @@
 	}
 
 	$etablissements = EtablissementsManager::getAllEtablissements();
+	$success = 0;
 
 	// Javascript regex
 	$regex_name = "^[A-Za-zÀ-ÖØ-öø-ÿ \-]+$";
 	$regex_date = "^[0-9]{2}/[0-9]{2}/[0-9]{4}$";
+	$regex_numen = "^(GIPFCIP|GIPCFAA|PEN)+([A-Z0-9]){5,7}$";
+
+	if(!empty($_POST)) {
+		$success = saisie_staff();
+	}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -40,11 +46,29 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
+	<style>
+		.success {
+			border: none;
+			margin-bottom: 12px;
+			background-color: #a6ff79;
+			background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .4) 100%);
+		}
+	</style>
   </head>
   <body>
   	<?php include '../includes/avatar.php'; ?>
 	
     <h1>Formulaire de saisie</h1>
+
+	<?php
+		if ($success): ?>
+			<div class="container bulleDialogue success">
+				<div class="icon div circle-right"></div>
+				Votre saisi manuelle pour <?php echo $_POST['sn'] .' '. $_POST['givenname']; ?> a été enregistré avec succes
+			</div>
+		<?php
+		endif;
+	?>
 
 	<div class="container fiche">
 		<form action="" method="post">
@@ -53,13 +77,13 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						<label for="lastname">Nom :</label>
-						<input type="text" name="lastname" id="lastname" class="form-control" required="required" pattern="<?php echo $regex_name; ?>">
+						<input type="text" name="sn" id="lastname" class="form-control" required="required" pattern="<?php echo $regex_name; ?>">
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
 						<label for="birthname">Nom de naissance (si différent) :</label>
-						<input type="text" name="birthname" id="birthname" class="form-control">
+						<input type="text" name="nompatro" id="birthname" class="form-control">
 					</div>
 				</div>
 			</div>
@@ -67,34 +91,22 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						<label for="name">Prénom :</label>
-						<input type="text" name="name" id="name" class="form-control" required="required" pattern="<?php echo $regex_name; ?>" title="">
+						<input type="text" name="givenname" id="name" class="form-control" required="required" pattern="<?php echo $regex_name; ?>" title="">
 					</div>
 					<div class="form-group">
 						<label for="civilite">Civilité :</label>
-						<select type="text" name="civilite" id="civilite" class="form-control" required="required" title="">
+						<select type="text" name="codecivilite" id="civilite" class="form-control" required="required" title="">
 							<option disabled selected> -- Choisir une option -- </option>
 							<option value="M">Monsieur</option>
-							<option value="Mme">Madame</option>
-							<option value="Mlle">Mademoiselle</option>
+							<option value="MM">Madame</option>
+							<option value="MME">Mademoiselle</option>
 						</select>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
 						<label for="date_birthday">Date de naissance :</label>
-						<input type="date" name="date_birthday" id="date_birthday" class="form-control" value="" required="required" pattern="<?php echo $regex_date; ?>">
-					</div>
-					<div class="form-group">
-						<label class="label-form">RNE :</label>
-						<select type="text" name="civilite" id="civilite" class="form-control" title="">
-							<option disabled selected> -- Choisir une option -- </option>
-							<?php
-								foreach ($etablissements as $e) {
-									printf('<option value="%s">%s %s</option>', $e->id(), $e->name(), $e->rne());
-								}
-							?>
-						</select>
-							
+						<input type="date" name="datenaissance" id="date_birthday" class="form-control" value="" required="required" pattern="<?php echo $regex_date; ?>">
 					</div>
 				</div>
 				
@@ -124,33 +136,48 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="form-group">
-						<label class="label-form">Status :</label>
-						<select type="text" name="civilite" id="civilite" class="form-control" required="required" title="">
+						<label for="numen">NUMEN :</label>
+						<input type="text" name="numen" id="numen" class="form-control" required="required" pattern="<?php echo $regex_numen; ?>" title="">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label class="label-form">RNE :</label>
+						<select type="text" name="rne" id="rne" class="form-control" required="required" title="">
 							<option disabled selected> -- Choisir une option -- </option>
-							<option value="CTR_GIP">Contractuel GIP</option>
-							<option value="PERS_GIP">Personnel GIP</option>
+							<?php
+								foreach ($etablissements as $e) {
+									printf('<option value="%s">%s %s</option>', $e->rne(), $e->name(), $e->rne());
+								}
+							?>
 						</select>
 					</div>
 				</div>
-				
 			</div>
 			
 
 			<div class="row">
 				<div class="col-md-6">
 					<div class="form-group">
+						<label class="label-form">Status :</label>
+						<select type="text" name="title" id="title" class="form-control" required="required" title="">
+							<option disabled selected> -- Choisir une option -- </option>
+							<option value="CTR_GIP">Contractuel GIP</option>
+							<option value="PERS_GIP">Personnel GIP</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
 						<label for="date_fin_fonction">Fin de fonction (décocher si aucun):</label>
 						<div class="input-group">
 							<div class="input-group-addon">
-								<input type="checkbox" id="date_fin_fonction_active" checked>
+								<input type="checkbox" id="date_fin_fonction_active" name="finfonction" checked>
 							</div>
-							<input type="date" name="date_fin_fonction" id="date_fin_fonction" class="form-control" value="" required="required">
-							
+							<input type="date" id="date_fin_fonction" name="dateff" class="form-control" required="required">
 						</div>
-						
 					</div>
 				</div>
-				
 			</div>
 
 			<button class="pull-right btn btn-primary" type="submit">Envoyer</button>
@@ -158,8 +185,6 @@
 		</form>
 		
 	</div><!-- .container -->
-	
-
 
 	<script src="../node_modules/atomjs/atom.js"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
@@ -199,7 +224,7 @@
 			labelMonthPrev: 'Précédent',
 			// Format
 			format: 'dd/mm/yyyy',
-			formatSubmit: 'dd/mm/yyyy'
+			formatSubmit: 'yyyy/mm/dd'
 		});
 
 		$('#date_birthday').pickadate({
@@ -209,3 +234,22 @@
 	</script>
   </body>
 </html>
+<?php
+	function saisie_staff() {
+		$staffData = array(
+			'numen' => $_POST['numen'],
+			'sn' => $_POST['sn'],
+			'nompatro' => $_POST['nompatro'],
+			'givenname' => $_POST['givenname'],
+			'datenaissance' => $_POST['datenaissance_submit'],
+			'codecivilite' => $_POST['codecivilite'],
+			'title' => $_POST['title'],
+			'rne' => $_POST['rne'],
+			'finfonction' => isset($_POST['finfonction']) ? "FF" : null,
+			'dateff' => $_POST['dateff_submit'] ? $_POST['dateff_submit'] : null
+		);
+		
+		error_log(print_r($_POST, TRUE), 0);
+		return StaffManager::create(new Staff($staffData));
+	}
+?>

@@ -58,7 +58,7 @@
 	<div class="app-logo center"></div>
 
 	<div id="list-item">
-		<a href="formulaire_inscription.php">
+		<a href="saisie_textannu.php">
 			<div class="item icon calendar-modify">
 				<div class="title">Formulaire d'inscription</div> 
 			</div>
