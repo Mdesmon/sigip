@@ -7,7 +7,7 @@ class StaffManager
     private static $_req =
        'SELECT
             id, numen, sn, nompatro, givenname, datenaissance,
-            codevicilite, title, rne, rneextract, finfonction,
+            codecivilite, title, rne, rneextract, finfonction,
             dateff, fredurne, oldemployeenumber
         FROM Textannu
        ';

@@ -10,7 +10,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "atomjs": "https://github.com/lgmoraes/AtomJS.git",
+    "atomjs": "git+https://github.com/lgmoraes/AtomJS.git",
     "bootstrap": "^3.3.7",
     "font_webatlas": "^0.6.0",
     "jquery": "^3.3.1",

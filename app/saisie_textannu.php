@@ -61,12 +61,13 @@
     <h1>Formulaire de saisie</h1>
 
 	<?php
-		if ($success): ?>
-			<div class="container bulleDialogue success">
-				<div class="icon div circle-right"></div>
-				Votre saisi manuelle pour <?php echo $_POST['sn'] .' '. $_POST['givenname']; ?> a été enregistré avec succes
-			</div>
-		<?php
+		if ($success):
+			?>
+				<div class="container bulleDialogue success">
+					<div class="icon div circle-right"></div>
+					Votre saisi manuelle pour <?php echo $_POST['sn'] .' '. $_POST['givenname']; ?> a été enregistré avec succes
+				</div>
+			<?php
 		endif;
 	?>
 
