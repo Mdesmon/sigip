@@ -67,7 +67,7 @@
 	?>
 
 	<div class="container fiche">
-		<form action="" method="post">
+		<form id="form_textannu" action="" method="post">
 			<legend>Inscription</legend>
 			<?php include '../includes/formulaire_textannu.php'; ?>
 		</form>
@@ -79,47 +79,7 @@
 	<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="../node_modules/pickadate/lib/picker.js"></script>
 	<script src="../node_modules/pickadate/lib/picker.date.js"></script>
-	<script>
-		var form = document.getElementsByTagName('form')[0];
-		
-		form.onsubmit = function() {
-			if(datenaissance.value === "") {
-				datenaissance.click();
-				return false;
-			}
-
-			if(finfonction.checked && dateff.value === "") {
-				dateff.click();
-				return false;
-			}
-		};
-
-		finfonction.onchange = function() {
-			dateff.disabled = !this.checked;
-		};
-
-		/* Pickadate */
-
-		$.extend($.fn.pickadate.defaults, {
-			selectYears: true,
-			// Translations
-			monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
-			weekdaysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
-			today: 'Aujourd\'hui',
-			clear: 'Effacer',
-			close: 'Fermer',
-			labelMonthNext: 'Suivant',
-			labelMonthPrev: 'Précédent',
-			// Format
-			format: 'dd/mm/yyyy',
-			formatSubmit: 'yyyy/mm/dd'
-		});
-
-		$('#datenaissance').pickadate({
-			max: 'picker__day--today'
-		});
-		$('#dateff').pickadate();
-	</script>
+	<script src="../js/form_textannu.js"></script>
   </body>
 </html>
 <?php
