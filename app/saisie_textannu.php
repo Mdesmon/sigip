@@ -12,11 +12,6 @@
 	$etablissements = EtablissementsManager::getAllEtablissements();
 	$success = 0;
 
-	// Javascript regex
-	$regex_name = "^[A-Za-zÀ-ÖØ-öø-ÿ \-]+$";
-	$regex_date = "^[0-9]{2}/[0-9]{2}/[0-9]{4}$";
-	$regex_numen = "^(GIPFCIP|GIPCFAA|PEN)+([A-Z0-9]){5,7}$";
-
 	if(!empty($_POST)) {
 		$success = saisie_staff();
 	}
@@ -74,115 +69,7 @@
 	<div class="container fiche">
 		<form action="" method="post">
 			<legend>Inscription</legend>
-			<div class="row">
-				<div class="col-md-6">
-					<div class="form-group">
-						<label for="lastname">Nom :</label>
-						<input type="text" name="sn" id="lastname" class="form-control" required="required" pattern="<?php echo $regex_name; ?>">
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="form-group">
-						<label for="birthname">Nom de naissance (si différent) :</label>
-						<input type="text" name="nompatro" id="birthname" class="form-control">
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<div class="form-group">
-						<label for="name">Prénom :</label>
-						<input type="text" name="givenname" id="name" class="form-control" required="required" pattern="<?php echo $regex_name; ?>" title="">
-					</div>
-					<div class="form-group">
-						<label for="civilite">Civilité :</label>
-						<select type="text" name="codecivilite" id="civilite" class="form-control" required="required" title="">
-							<option disabled selected> -- Choisir une option -- </option>
-							<option value="M">Monsieur</option>
-							<option value="MM">Madame</option>
-							<option value="MME">Mademoiselle</option>
-						</select>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="form-group">
-						<label for="date_birthday">Date de naissance :</label>
-						<input type="date" name="datenaissance" id="date_birthday" class="form-control" value="" required="required" pattern="<?php echo $regex_date; ?>">
-					</div>
-				</div>
-				
-			</div>
-
-		
-
-			<!-- <div class="form-group">
-				<label class="label-form">
-					Status :
-					<div class="radio">
-						<label for="" class="radio">
-							<input type="radio" name="" id="">
-							Contractuel GIP
-						</label>
-					</div>
-					<div class="radio">
-						<label for="" class="radio">
-							<input type="radio" name="" id="">
-							Personnel GIP
-						</label>
-					</div>
-				</label>
-			</div> -->
-
-
-			<div class="row">
-				<div class="col-md-6">
-					<div class="form-group">
-						<label for="numen">NUMEN :</label>
-						<input type="text" name="numen" id="numen" class="form-control" required="required" pattern="<?php echo $regex_numen; ?>" title="">
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="form-group">
-						<label class="label-form">RNE :</label>
-						<select type="text" name="rne" id="rne" class="form-control" required="required" title="">
-							<option disabled selected> -- Choisir une option -- </option>
-							<?php
-								foreach ($etablissements as $e) {
-									printf('<option value="%s">%s %s</option>', $e->rne(), $e->name(), $e->rne());
-								}
-							?>
-						</select>
-					</div>
-				</div>
-			</div>
-			
-
-			<div class="row">
-				<div class="col-md-6">
-					<div class="form-group">
-						<label class="label-form">Status :</label>
-						<select type="text" name="title" id="title" class="form-control" required="required" title="">
-							<option disabled selected> -- Choisir une option -- </option>
-							<option value="CTR_GIP">Contractuel GIP</option>
-							<option value="PERS_GIP">Personnel GIP</option>
-						</select>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="form-group">
-						<label for="date_fin_fonction">Fin de fonction (décocher si aucun):</label>
-						<div class="input-group">
-							<div class="input-group-addon">
-								<input type="checkbox" id="date_fin_fonction_active" name="finfonction" checked>
-							</div>
-							<input type="date" id="date_fin_fonction" name="dateff" class="form-control" required="required">
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<button class="pull-right btn btn-primary" type="submit">Envoyer</button>
-
+			<?php include '../includes/formulaire_textannu.php'; ?>
 		</form>
 		
 	</div><!-- .container -->
@@ -196,19 +83,19 @@
 		var form = document.getElementsByTagName('form')[0];
 		
 		form.onsubmit = function() {
-			if(date_birthday.value === "") {
-				date_birthday.click();
+			if(datenaissance.value === "") {
+				datenaissance.click();
 				return false;
 			}
 
-			if(date_fin_fonction_active.checked && date_fin_fonction.value === "") {
-				date_fin_fonction.click();
+			if(finfonction.checked && dateff.value === "") {
+				dateff.click();
 				return false;
 			}
 		};
 
-		date_fin_fonction_active.onchange = function() {
-			date_fin_fonction.disabled = !this.checked;
+		finfonction.onchange = function() {
+			dateff.disabled = !this.checked;
 		};
 
 		/* Pickadate */
@@ -228,10 +115,10 @@
 			formatSubmit: 'yyyy/mm/dd'
 		});
 
-		$('#date_birthday').pickadate({
+		$('#datenaissance').pickadate({
 			max: 'picker__day--today'
 		});
-		$('#date_fin_fonction').pickadate();
+		$('#dateff').pickadate();
 	</script>
   </body>
 </html>
@@ -250,7 +137,6 @@
 			'dateff' => $_POST['dateff_submit'] ? $_POST['dateff_submit'] : null
 		);
 		
-		error_log(print_r($_POST, TRUE), 0);
 		return StaffManager::create(new Staff($staffData));
 	}
 ?>
