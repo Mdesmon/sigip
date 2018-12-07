@@ -3,11 +3,6 @@ form_textannu.onsubmit = function() {
         datenaissance.click();
         return false;
     }
-
-    if(finfonction.checked && dateff.value === "") {
-        dateff.click();
-        return false;
-    }
 };
 
 finfonction.onchange = function() {
