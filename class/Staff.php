@@ -43,6 +43,7 @@ class Staff implements JsonSerializable
             'id' => $this->id(),
             'numen' => $this->numen(),
             'sn' => $this->sn(),
+            'nompatro' => $this->nompatro(),
             'givenname' => $this->givenname(),
             'datenaissance' => $this->datenaissance(),
             'codecivilite' => $this->codecivilite(),
